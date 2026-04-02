@@ -19,7 +19,7 @@ class Blob : public OurGitObject {
 
         std::string getType() override {return "Blob";};
 
-        void setContent(const std::string& content) {this->content = content;}; 
+        void setContent(const std::string& content) { this->content = content; }; 
 
-        const std::string& getContent() {return content;};
+        const std::string& getContent() { return content; };
 };

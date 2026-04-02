@@ -18,7 +18,7 @@ class Index : public OurGitObject {
 
         std::string getType();
 
-        Index deserialize(const std::string& data);
+        static Index deserialize(const std::string& data);
 
         /** Before this function is called, ensure the Blob has existed.  */
         void addBlob(const std::string& path, const std::string& blobHash);
@@ -28,7 +28,7 @@ class Index : public OurGitObject {
 
         bool contains(const std::string& path);
 
-        Tree buildTree();
+        Tree& buildTree();
 
         void clear();
 

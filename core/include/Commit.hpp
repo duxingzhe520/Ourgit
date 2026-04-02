@@ -2,6 +2,10 @@
 #include "OurGitObject.hpp"
 #include <string>
 #include <vector>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
 
 /**
  * @author sry
@@ -24,9 +28,9 @@ class Commit : public OurGitObject {
 
         std::string serialize();
 
-        Commit deserialize(const std::string& data);
+        static Commit deserialize(const std::string& data);
 
-        std::string getType() {return "Commit";};
+        std::string getType() { return "Commit"; };
 
         const std::string& getTreeHash();
 
@@ -35,4 +39,9 @@ class Commit : public OurGitObject {
         bool isMerge();
 
         std::vector<std::string>& getParents();
+
+        std::string& printOut();
+
+    private :
+        std::string getStdTime();
 };
