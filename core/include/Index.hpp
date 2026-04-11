@@ -1,3 +1,4 @@
+#pragma once
 #include "OurGitObject.hpp"
 #include "Tree.hpp"
 #include <string>

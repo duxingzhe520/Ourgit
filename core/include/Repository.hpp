@@ -1,3 +1,4 @@
+#pragma once
 #include "Blob.hpp"
 #include "Tree.hpp"
 #include "Commit.hpp"
@@ -12,7 +13,8 @@ class Repository {
     /** .OurGit's path */
     const static std::string OUR_GIT_DIRECTORY;
 
-    /** Initialize OUR_GIT_DIRECTORY, CommitZero, IndexZero. 
+public:
+    /** Initialize OUR_GIT_DIRECTORY, CommitZero, IndexZero.
      * @author yrc
     */
     static bool init(const std::string& author);
@@ -25,7 +27,7 @@ class Repository {
      */
     static bool add(const std::string& path);
 
-    /** Index --> Tree --> hashcode存到commit里，再算commit的哈希值，别忘了改HEAD存的哈希值 
+    /** Index --> Tree --> hashcode存到commit里，再算commit的哈希值，别忘了改HEAD存的哈希值
      * @author sry
     */
     static bool commit(const std::string& message);
